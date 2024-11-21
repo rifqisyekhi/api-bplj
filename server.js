@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const Room = require('./models/room');
 
 const app = express();
 app.use(express.json());
