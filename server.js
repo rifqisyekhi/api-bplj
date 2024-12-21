@@ -353,8 +353,8 @@ app.put(
   upload.single("imageLayanan"), // Optional file upload
   async (req, res) => {
     try {
-      const { deskripsi, standarAcuan, biayaTarif, produk } = req.body;
-      const updatedData = { deskripsi, standarAcuan, biayaTarif, produk };
+      const { namaLayanan, deskripsi, standarAcuan, biayaTarif, produk } = req.body;
+      const updatedData = { namaLayanan, deskripsi, standarAcuan, biayaTarif, produk };
 
       // If a new file is uploaded, update the image path
       if (req.file) {
