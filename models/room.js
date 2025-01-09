@@ -1,9 +1,26 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../config/database");
 
-const roomSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  capacity: { type: Number, required: true },
-  location_type: { type: String, required: true }
-});
+const roomSchema = sequelize.define(
+  "Room",
+  {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    capacity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    location_type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    tableName: "rooms",
+    timestamps: false,
+  }
+);
 
-module.exports = mongoose.model('Room', roomSchema);
+module.exports = roomSchema;
